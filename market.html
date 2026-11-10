@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Market · Job Watcher</title>
   <meta name="description" content="A report on the job-posting history the watcher has built, computed in the browser.">
-  <meta name="theme-color" content="#0f2a5c" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#060912">
+  <script>(function(){var t;try{t=localStorage.getItem("jobwatcher.theme")}catch(e){}var d=document.documentElement;d.setAttribute("data-theme",t==="light"?"light":"dark");d.classList.add("js")})();</script>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
   <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
@@ -21,7 +21,7 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="./" aria-label="Job Watcher home">
-        <img src="assets/icons/icon-192.png" alt="" width="32" height="32">
+        <img src="assets/icons/icon-192.png" alt="" width="34" height="34">
         <span>Job<b>Watcher</b></span>
       </a>
       <nav class="nav" aria-label="Main">
@@ -29,16 +29,21 @@
         <a href="browse.html">Browse</a>
         <a href="market.html" aria-current="page">Market</a>
       </nav>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to light theme" aria-pressed="false">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
     </div>
   </header>
   <div id="banner" class="banner" role="status" hidden></div>
 
   <main id="main">
-    <section class="hero hero-compact">
+    <section class="hero hero-compact" aria-labelledby="hero-h">
+      <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
       <div class="wrap">
-        <p class="eyebrow">Market report · <span id="as-of">as of the last run</span></p>
-        <h1>What the history says</h1>
-        <p class="hero-sub" id="market-intro">Every number below is computed in your browser from <a href="data/history.csv">history.csv</a>, so the report grows with the history. Postings marked first-run were already open when the watcher started on their source, so their start date is unknown; the definitions leave them out where noted.</p>
+        <p class="eyebrow"><span class="live" aria-hidden="true"></span>Market report · <span id="as-of">as of the last run</span></p>
+        <h1 id="hero-h">What the history <span class="grad">says</span></h1>
+        <p class="hero-sub" id="market-intro">Every number below is computed in your browser from <a href="data/history.csv">history.csv</a>, so the report grows with the history. Postings marked first-run were already open when the watcher started on their source, so their start date is unknown. The definitions leave them out where noted.</p>
         <ol class="toc" aria-label="Sections">
           <li><a href="#m1">New per day</a></li>
           <li><a href="#m2">Removed per day</a></li>
@@ -51,58 +56,64 @@
     </section>
 
     <div class="wrap market">
-      <section class="panel report" id="m1" aria-labelledby="m1-h">
-        <p class="section-num">1 · New postings per day</p>
-        <h2 id="m1-h">Loading…</h2>
-        <p class="lede" id="m1-p"></p>
-        <div class="chart-host" id="m1-c"></div>
+      <section class="report card" id="m1" aria-labelledby="m1-h">
+        <div class="report-top">
+          <div class="big" id="m1-b"><span class="big-num">–</span><span class="big-label">&nbsp;</span></div>
+          <div><p class="section-num">1 · New postings per day</p><h2 id="m1-h">Loading…</h2><p class="lede" id="m1-p"></p></div>
+        </div>
+        <div class="chart-host" id="m1-c"><div class="skeleton sk-chart"></div></div>
         <div id="m1-t"></div>
       </section>
 
-      <section class="panel report" id="m2" aria-labelledby="m2-h">
-        <p class="section-num">2 · Removed postings per day</p>
-        <h2 id="m2-h">Loading…</h2>
-        <p class="lede" id="m2-p"></p>
-        <div class="chart-host" id="m2-c"></div>
+      <section class="report card reveal" id="m2" aria-labelledby="m2-h">
+        <div class="report-top">
+          <div class="big" id="m2-b"><span class="big-num">–</span><span class="big-label">&nbsp;</span></div>
+          <div><p class="section-num">2 · Removed postings per day</p><h2 id="m2-h">Loading…</h2><p class="lede" id="m2-p"></p></div>
+        </div>
+        <div class="chart-host" id="m2-c"><div class="skeleton sk-chart"></div></div>
         <div id="m2-t"></div>
       </section>
 
-      <section class="panel report" id="m3" aria-labelledby="m3-h">
-        <p class="section-num">3 · Open postings per employer</p>
-        <h2 id="m3-h">Loading…</h2>
-        <p class="lede" id="m3-p"></p>
-        <div class="chart-host" id="m3-c"></div>
+      <section class="report card reveal" id="m3" aria-labelledby="m3-h">
+        <div class="report-top">
+          <div class="big" id="m3-b"><span class="big-num">–</span><span class="big-label">&nbsp;</span></div>
+          <div><p class="section-num">3 · Open postings per employer</p><h2 id="m3-h">Loading…</h2><p class="lede" id="m3-p"></p></div>
+        </div>
+        <div class="chart-host" id="m3-c"><div class="skeleton sk-chart"></div></div>
         <div id="m3-t"></div>
       </section>
 
-      <section class="panel report" id="m4" aria-labelledby="m4-h">
-        <p class="section-num">4 · Days open</p>
-        <h2 id="m4-h">Loading…</h2>
-        <p class="lede" id="m4-p"></p>
-        <div class="chart-host" id="m4-c"></div>
+      <section class="report card reveal" id="m4" aria-labelledby="m4-h">
+        <div class="report-top">
+          <div class="big" id="m4-b"><span class="big-num">–</span><span class="big-label">&nbsp;</span></div>
+          <div><p class="section-num">4 · Days open</p><h2 id="m4-h">Loading…</h2><p class="lede" id="m4-p"></p></div>
+        </div>
+        <div class="chart-host" id="m4-c"><div class="skeleton sk-chart"></div></div>
         <div id="m4-t"></div>
       </section>
 
-      <section class="panel report" id="m5" aria-labelledby="m5-h">
-        <p class="section-num">5 · Share removed within seven days</p>
-        <h2 id="m5-h">Loading…</h2>
-        <p class="lede" id="m5-p"></p>
-        <div class="chart-host" id="m5-c"></div>
+      <section class="report card reveal" id="m5" aria-labelledby="m5-h">
+        <div class="report-top">
+          <div class="big" id="m5-b"><span class="big-num">–</span><span class="big-label">&nbsp;</span></div>
+          <div><p class="section-num">5 · Share removed within seven days</p><h2 id="m5-h">Loading…</h2><p class="lede" id="m5-p"></p></div>
+        </div>
+        <div class="chart-host" id="m5-c"><div class="skeleton sk-chart"></div></div>
         <div id="m5-t"></div>
       </section>
 
-      <section class="panel report" id="m6" aria-labelledby="m6-h">
-        <p class="section-num">6 · Top locations among open postings</p>
-        <h2 id="m6-h">Loading…</h2>
-        <p class="lede" id="m6-p"></p>
-        <div class="chart-host" id="m6-c"></div>
+      <section class="report card reveal" id="m6" aria-labelledby="m6-h">
+        <div class="report-top">
+          <div class="big" id="m6-b"><span class="big-num">–</span><span class="big-label">&nbsp;</span></div>
+          <div><p class="section-num">6 · Top locations among open postings</p><h2 id="m6-h">Loading…</h2><p class="lede" id="m6-p"></p></div>
+        </div>
+        <div class="chart-host" id="m6-c"><div class="skeleton sk-chart"></div></div>
         <div id="m6-t"></div>
       </section>
     </div>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">Data: <a href="data/history.csv">history.csv</a> · <a href="data/status.json">status.json</a> · All numbers computed in your browser. Dates are UTC.</div>
+    <div class="wrap">Data: <a href="data/history.csv">history.csv</a> · <a href="data/status.json">status.json</a> · Every number is computed in your browser. Dates are UTC.</div>
   </footer>
 </body>
 </html>

@@ -8,7 +8,7 @@
  *  - assets/logos/*: cache-first at runtime (not precached; may 404).
  * Bump VERSION whenever shell files change.
  */
-var VERSION = "v1";
+var VERSION = "v2";
 var SHELL_CACHE = "jw-shell-" + VERSION;
 var DATA_CACHE = "jw-data-v1";
 var LOGO_CACHE = "jw-logos-v1";

@@ -57,7 +57,7 @@
         }));
       }))
     ]);
-    return h("details", { class: "table-view" }, [h("summary", { text: "Show the numbers (" + rows.length + " rows)" }), h("div", { class: "table-scroll" }, table)]);
+    return h("details", { class: "table-view" }, [h("summary", { text: "Show the numbers (" + App.plural(rows.length, "row") + ")" }), h("div", { class: "table-scroll" }, table)]);
   }
 
   /** Re-render on width change so text stays at real pixel size. */
@@ -80,7 +80,7 @@
    */
   function columns(host, cfg) {
     App.tooltip();
-    host.classList.add("chart");
+    host.classList.add("chart", "pre");
     var plot = h("div", { class: "chart-plot" });
     host.textContent = "";
     if (cfg.series.length > 1) host.appendChild(legend(cfg.series));
@@ -112,7 +112,7 @@
 
       for (var i = 0; i < n; i++) {
         var gx = m.l + band * i + (band - groupW) / 2;
-        var g = s("g", { class: "col-group" + (cfg.markIndex === i ? " marked" : ""), tabindex: "0" });
+        var g = s("g", { class: "col-group" + (cfg.markIndex === i ? " marked" : ""), tabindex: "0", style: "--i:" + Math.min(i, 40) });
         var tipRows = [[cfg.tipLabels ? cfg.tipLabels[i] : cfg.labels[i]]];
         cfg.series.forEach(function (sr, k) {
           var val = sr.values[i] || 0;
@@ -129,6 +129,7 @@
         }
       }
       plot.appendChild(svg);
+      App.observe(host);
     });
   }
 
@@ -139,7 +140,7 @@
   function hbars(host, items, cfg) {
     App.tooltip();
     cfg = cfg || {};
-    host.classList.add("chart");
+    host.classList.add("chart", "pre");
     host.textContent = "";
     var max = 0;
     items.forEach(function (it) { if (it.value > max) max = it.value; });
@@ -152,7 +153,7 @@
       ]);
       var valText = cfg.valueFmt ? cfg.valueFmt(it.value) : App.fmt(it.value);
       var li = h("li", {
-        class: "hbar" + (it.highlight ? " is-highlight" : ""), tabindex: "0",
+        class: "hbar" + (it.highlight ? " is-highlight" : ""), tabindex: "0", style: "--i:" + Math.min(i, 20),
         "data-tip": JSON.stringify([[it.label], [cfg.seriesName || "Open postings", valText, it.color || cfg.color || "var(--series-1)"]].concat(it.extraTip || []))
       }, [
         h("span", { class: "hbar-rank", text: String(i + 1) }),
@@ -164,13 +165,14 @@
       list.appendChild(li);
     });
     host.appendChild(list);
+    App.observe(host);
   }
 
   /** Tall segmented bar: one whole split into parts. parts: [{label, value, color, ink}] */
   function segmentedBar(host, parts, cfg) {
     App.tooltip();
     cfg = cfg || {};
-    host.classList.add("chart");
+    host.classList.add("chart", "pre");
     host.textContent = "";
     var total = parts.reduce(function (a, p) { return a + p.value; }, 0);
     host.appendChild(legend(parts.map(function (p) { return { name: p.label, color: p.color }; })));
@@ -187,6 +189,7 @@
       }, share >= 0.09 ? h("span", { text: App.pct(share, 0) }) : null));
     });
     host.appendChild(bar);
+    App.observe(host);
     if (cfg.caption) host.appendChild(h("p", { class: "chart-caption", text: cfg.caption }));
   }
 
