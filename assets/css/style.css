@@ -486,9 +486,38 @@ img { max-width: 100%; }
 .city-cta { position: absolute; right: 16px; bottom: 14px; z-index: 2; display: inline-flex; align-items: center; gap: 6px; font-size: .84rem; font-weight: 800; color: var(--city-ink); padding: 8px 14px; border-radius: 999px; background: linear-gradient(135deg, var(--c), var(--c2)); box-shadow: 0 10px 24px -10px var(--c); transition: transform .3s var(--spring); --city-ink: #071022; }
 :root[data-theme="light"] .city-cta { --city-ink: #fff; }
 .city-card:hover .city-cta { transform: translateX(-3px); }
-.skyline { margin: 12px -22px 0; height: 96px; display: block; color: var(--c); }
-.skyline svg { width: 100%; height: 100%; display: block; }
-.skyline .win { fill: var(--surface-solid); opacity: .55; }
+/* photo cards: real skyline photo + dark scrim + accent wash; text is always light on the scrim */
+.city-card.has-photo { --cl: #c9d4ff; min-height: 300px; padding-bottom: 70px; color: #fff; border-color: color-mix(in srgb, var(--c) 45%, transparent);
+  background: radial-gradient(120% 100% at 100% 100%, var(--c), transparent 60%), linear-gradient(160deg, #0b1124, var(--c2)); }
+.city-card.has-photo.city-nyc { --cl: #b8c6ff; }
+.city-card.has-photo.city-chicago { --cl: #8ff3d8; }
+.city-card.has-photo.city-nashville { --cl: #ffd28a; }
+.city-photo { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 1.2s var(--ease); background: var(--c2); }
+.city-card:hover .city-photo, .city-card:focus-visible .city-photo { transform: scale(1.08); }
+.city-scrim { position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(4, 7, 16, .9) 0%, rgba(4, 7, 16, .8) 45%, rgba(4, 7, 16, .55) 66%, rgba(4, 7, 16, .12) 100%),
+    linear-gradient(0deg, color-mix(in srgb, var(--c2) 60%, transparent) 0%, transparent 50%); }
+.city-card.has-photo .city-sub { color: rgba(255, 255, 255, .9); text-shadow: 0 1px 8px rgba(0, 0, 0, .7); }
+.city-card.has-photo .city-tag { color: var(--cl); background: rgba(255, 255, 255, .14); backdrop-filter: blur(6px); }
+.city-card.has-photo .city-count { background: linear-gradient(180deg, #fff 35%, var(--cl)); -webkit-background-clip: text; background-clip: text; text-shadow: none; }
+.city-card.has-photo .city-emps .logo { box-shadow: 0 0 0 2px rgba(4, 7, 16, .75); }
+.city-card.has-photo .city-emps .more { color: rgba(255, 255, 255, .85); text-shadow: 0 1px 8px rgba(0, 0, 0, .8); }
+.city-card.has-photo .city-cta { --city-ink: #071022; background: linear-gradient(135deg, #fff, var(--cl)); box-shadow: 0 10px 24px -10px rgba(0, 0, 0, .6); }
+.photo-credit-mark { position: absolute; left: 22px; bottom: 18px; font-size: .68rem; color: rgba(255, 255, 255, .7); }
+
+/* Browse: slim photo banner when a city filter is active */
+.city-banner { position: relative; isolation: isolate; overflow: hidden; display: flex; align-items: flex-end; min-height: 150px; margin-top: 22px; padding: 18px 22px;
+  border-radius: 20px; color: #fff; border: 1px solid var(--border); box-shadow: var(--shadow); animation: rise .5s var(--ease) both;
+  background: linear-gradient(135deg, #0b1124, #2a2f6b); }
+.city-banner[hidden] { display: none; }
+.city-banner .strip { position: absolute; inset: 0; z-index: -2; display: flex; }
+.city-banner .strip > span { position: relative; flex: 1; overflow: hidden; }
+.city-banner .city-photo { z-index: 0; transform: none; }
+.city-banner::after { content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg, rgba(4, 7, 16, .88) 0%, rgba(4, 7, 16, .6) 45%, rgba(4, 7, 16, .2) 100%), linear-gradient(0deg, color-mix(in srgb, var(--c2, #3b2a8f) 45%, transparent), transparent 70%); }
+.city-banner.city-nyc { --c2: var(--nyc-2); } .city-banner.city-chicago { --c2: var(--chicago-2); } .city-banner.city-nashville { --c2: var(--nashville-2); }
+.city-banner b { display: block; font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 850; letter-spacing: -0.03em; line-height: 1.1; }
+.city-banner span.sub { font-size: .9rem; color: rgba(255, 255, 255, .88); }
 
 /* ================================================================ Today: employer wall */
 .wall { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 168px), 1fr)); }
@@ -652,6 +681,8 @@ img { max-width: 100%; }
 /* ================================================================ footer */
 .site-footer { margin-top: 48px; padding: 26px 0 34px; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--border); }
 .site-footer a { color: var(--text-2); }
+.site-footer p { margin: 0 0 6px; }
+.site-footer .credits { font-size: .78rem; }
 
 /* ================================================================ motion + small screens */
 @media (prefers-reduced-motion: reduce) {

@@ -474,6 +474,26 @@
     return tip;
   }
 
+  /* ------------------------------------------------------------ city photos */
+  // Wikimedia Commons photos, credited in assets/cities/CREDITS.md and the footer.
+  var CITY_PHOTOS = {
+    NYC: { src: "assets/cities/nyc.jpg", w: 960, h: 512, pos: "32% 55%" },
+    Chicago: { src: "assets/cities/chicago.jpg", w: 960, h: 572, pos: "40% 30%" },
+    Nashville: { src: "assets/cities/nashville.jpg", w: 960, h: 601, pos: "18% 22%" }
+  };
+  /** Decorative skyline photo; if it fails to load, it is removed and the accent gradient shows. */
+  function cityPhoto(key) {
+    var p = CITY_PHOTOS[key];
+    if (!p) return null;
+    var img = h("img", { class: "city-photo", src: p.src, alt: "", width: p.w, height: p.h, decoding: "async", style: "object-position:" + p.pos });
+    img.addEventListener("error", function () {
+      var host = img.parentNode;
+      img.remove();
+      if (host) host.classList.add("photo-failed");
+    });
+    return img;
+  }
+
   function setText(id, v) { var el = document.getElementById(id); if (el) el.textContent = v; }
 
   /* ------------------------------------------------------------ boot */
@@ -487,6 +507,6 @@
     categoryTags: categoryTags, Shortlist: Shortlist, starButton: starButton, cityBadges: cityBadges,
     postingCard: postingCard, emptyState: emptyState, renderList: renderList, segmented: segmented,
     tooltip: tooltip, setText: setText, countUp: countUp, observe: observe, revealAll: revealAll,
-    REDUCED: REDUCED, CITY_SLUG: CITY_SLUG
+    REDUCED: REDUCED, CITY_SLUG: CITY_SLUG, cityPhoto: cityPhoto
   };
 })();

@@ -174,6 +174,8 @@ Site
 | `assets/css/style.css` | The one stylesheet all pages share. |
 | `assets/logos/<source>.png` | Employer logo shown next to each posting. |
 | `assets/icons/*.png` | App icons. |
+| `assets/cities/*.jpg` | Skyline photos of New York City, Chicago and Nashville for the city cards. |
+| `assets/cities/CREDITS.md` | Author, license and source of each skyline photo. |
 | `manifest.webmanifest` | Web app manifest, so the site installs as an app. |
 | `sw.js` | Service worker: loads data from the network when online and shows the last loaded data when offline. |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are. |

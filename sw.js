@@ -8,7 +8,7 @@
  *  - assets/logos/*: cache-first at runtime (not precached; may 404).
  * Bump VERSION whenever shell files change.
  */
-var VERSION = "v2";
+var VERSION = "v3";
 var SHELL_CACHE = "jw-shell-" + VERSION;
 var DATA_CACHE = "jw-data-v1";
 var LOGO_CACHE = "jw-logos-v1";
@@ -29,7 +29,10 @@ var SHELL = [
   "assets/js/market.js",
   "assets/icons/icon-192.png",
   "assets/icons/icon-512.png",
-  "assets/icons/icon-maskable-512.png"
+  "assets/icons/icon-maskable-512.png",
+  "assets/cities/nyc.jpg",
+  "assets/cities/chicago.jpg",
+  "assets/cities/nashville.jpg"
 ];
 
 self.addEventListener("install", function (event) {

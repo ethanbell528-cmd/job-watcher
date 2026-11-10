@@ -4,40 +4,6 @@
   var JW = window.JW, App = window.App, h = App.h;
   var ROLE = "Accounting & finance";
 
-  /* ------------------------------------------------------------ skylines */
-  // Each building: [x, width, height, top] on a 300 x 96 canvas; top = flat|spire|point|twin|step|crown
-  var SKYLINES = {
-    NYC: [[0, 18, 26], [16, 14, 40], [28, 20, 33], [46, 12, 52, "point"], [56, 22, 44], [76, 18, 62, "step"], [92, 16, 38], [106, 22, 48],
-      [126, 12, 58, "point"], [136, 20, 36], [154, 16, 46], [168, 26, 72, "spire"], [192, 18, 40], [208, 14, 54], [220, 24, 30], [242, 16, 44], [256, 20, 34], [274, 26, 24]],
-    Chicago: [[0, 22, 28], [20, 16, 42], [34, 20, 34], [52, 14, 50], [64, 24, 40], [86, 18, 58, "crown"], [102, 26, 76, "twin"], [126, 16, 46], [140, 22, 52],
-      [160, 14, 36], [172, 20, 64, "spire"], [190, 18, 40], [206, 24, 48], [228, 14, 30], [240, 22, 44], [260, 16, 36], [274, 26, 26]],
-    Nashville: [[0, 26, 22], [24, 18, 34], [40, 22, 28], [60, 16, 40], [74, 20, 30], [92, 14, 46], [104, 26, 70, "twin"], [128, 18, 42], [144, 22, 50, "step"],
-      [164, 16, 34], [178, 20, 44], [196, 26, 30], [220, 16, 38], [234, 22, 26], [254, 18, 32], [270, 30, 22]]
-  };
-  function skylineSVG(city) {
-    var H = 96, d = "", wins = "";
-    SKYLINES[city].forEach(function (b) {
-      var x = b[0], w = b[1], top = H - b[2], kind = b[3];
-      d += "M" + x + " " + H + "V" + top + "H" + (x + w) + "V" + H + "Z";
-      if (kind === "spire") d += "M" + (x + w / 2 - 1.2) + " " + top + "V" + (top - 16) + "H" + (x + w / 2 + 1.2) + "V" + top + "Z";
-      if (kind === "point") d += "M" + x + " " + top + "L" + (x + w / 2) + " " + (top - 12) + "L" + (x + w) + " " + top + "Z";
-      if (kind === "twin") d += "M" + (x + w * .2) + " " + top + "L" + (x + w * .3) + " " + (top - 16) + "L" + (x + w * .4) + " " + top + "Z" +
-        "M" + (x + w * .6) + " " + top + "L" + (x + w * .7) + " " + (top - 16) + "L" + (x + w * .8) + " " + top + "Z";
-      if (kind === "step") d += "M" + (x + w * .2) + " " + top + "V" + (top - 8) + "H" + (x + w * .8) + "V" + top + "Z" +
-        "M" + (x + w / 2 - 1) + " " + (top - 8) + "V" + (top - 18) + "H" + (x + w / 2 + 1) + "V" + (top - 8) + "Z";
-      if (kind === "crown") d += "M" + (x + 2) + " " + top + "V" + (top - 6) + "H" + (x + w - 2) + "V" + top + "Z";
-      for (var wy = top + 6; wy < H - 6; wy += 9) {
-        for (var wx = x + 4; wx < x + w - 4; wx += 6) {
-          if (((wx * 7 + wy * 13) % 5) < 2) wins += '<rect class="win" x="' + wx + '" y="' + wy + '" width="2" height="3"/>';
-        }
-      }
-    });
-    var id = "sk-" + city;
-    return '<svg viewBox="0 0 300 96" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="' + id + '" x1="0" y1="0" x2="0" y2="1">' +
-      '<stop offset="0" stop-color="currentColor" stop-opacity=".95"/><stop offset="1" stop-color="currentColor" stop-opacity=".35"/></linearGradient></defs>' +
-      '<path d="' + d + '" fill="url(#' + id + ')"/>' + wins + "</svg>";
-  }
-
   var CITIES = [
     { key: "NYC", name: "New York City", tag: "All five boroughs", slug: "nyc" },
     { key: "Chicago", name: "Chicago", tag: "Illinois", slug: "chicago" },
@@ -54,15 +20,16 @@
       var emps = JW.sortedCounts(JW.countBy(role, function (r) { return r.employer; }));
       var src = App.employerSources(role);
       var countEl = h("span", { class: "city-count", text: "0" });
-      var card = h("a", { class: "city-card city-" + c.slug, href: "browse.html?city=" + c.slug,
+      var card = h("a", { class: "city-card has-photo city-" + c.slug, href: "browse.html?city=" + c.slug,
         "aria-label": c.name + ": " + App.fmt(role.length) + " open accounting and finance postings. Browse them." }, [
+        App.cityPhoto(c.key),
+        h("span", { class: "city-scrim", "aria-hidden": "true" }),
         h("div", { class: "city-top" }, [h("span", { class: "city-name", text: c.name }), h("span", { class: "city-tag", text: c.tag })]),
         countEl,
         h("div", { class: "city-sub", text: "open accounting & finance roles · " + App.fmt(inCity.length) + " open in all roles" }),
         h("div", { class: "city-emps" }, emps.slice(0, 5).map(function (e) { return App.logo(src.get(e.key), e.key, "sm"); })
           .concat(emps.length > 5 ? [h("span", { class: "more", text: "+" + (emps.length - 5) + " more" })] :
             emps.length ? [h("span", { class: "more", text: App.plural(emps.length, "employer") })] : [h("span", { class: "more", text: "No openings right now" })])),
-        h("div", { class: "skyline", html: skylineSVG(c.key) }),
         h("span", { class: "city-cta", "aria-hidden": "true" }, ["Browse ", "→"])
       ]);
       host.appendChild(card);

@@ -166,10 +166,32 @@
       slice.forEach(function (r, i) { frag.appendChild(App.postingCard(r, { lastDate: data.lastDate, index: i })); });
       ul.appendChild(frag);
     }
+    renderBanner(list.length);
     renderPager(pages);
     renderActive();
     syncControls();
     writeURL();
+  }
+
+  /** Slim skyline-photo banner while a city filter is active. */
+  var CITY_TITLE = { NYC: "New York City", Chicago: "Chicago", Nashville: "Nashville" };
+  var bannerKey = null;
+  function renderBanner(n) {
+    var el = $("city-banner");
+    var key = state.location.indexOf("city:") === 0 ? state.location.slice(5) : null;
+    if (!key) { el.hidden = true; bannerKey = null; return; }
+    var what = state.shortlistOnly ? "shortlisted" : state.scope === "all" ? "open" : "open accounting & finance";
+    var sub = App.fmt(n) + " " + what + " posting" + (n === 1 ? "" : "s") + " match your filters";
+    if (bannerKey !== key) {
+      bannerKey = key;
+      el.textContent = "";
+      el.className = "city-banner" + (key === "any" ? "" : " city-" + key.toLowerCase());
+      var keys = key === "any" ? ["NYC", "Chicago", "Nashville"] : [key];
+      el.appendChild(h("div", { class: "strip", "aria-hidden": "true" }, keys.map(function (k) { return h("span", null, App.cityPhoto(k)); })));
+      el.appendChild(h("div", null, [h("b", { text: key === "any" ? "New York City · Chicago · Nashville" : CITY_TITLE[key] }), h("span", { class: "sub" })]));
+    }
+    el.querySelector(".sub").textContent = sub;
+    el.hidden = false;
   }
 
   function renderPager(pages) {

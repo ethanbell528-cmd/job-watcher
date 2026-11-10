@@ -99,6 +99,7 @@
         <p class="filters-note">Days open = last run date minus first-seen date. Postings that were already open when watching began show "N+" because their start date is unknown; the "or less" filters leave them out.</p>
       </form>
 
+      <div class="city-banner" id="city-banner" hidden></div>
       <div class="results-head">
         <p id="result-count" class="result-count" role="status" aria-live="polite">Loading postings…</p>
         <button type="button" class="btn btn-ghost" id="reset">Clear filters</button>
@@ -109,7 +110,14 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">Data: <a href="data/history.csv">history.csv</a> · <a href="data/status.json">status.json</a> · Every number is computed in your browser. Dates are UTC.</div>
+    <div class="wrap">
+      <p>Data: <a href="data/history.csv">history.csv</a> · <a href="data/status.json">status.json</a> · Every number is computed in your browser. Dates are UTC.</p>
+      <p class="credits">City photos via Wikimedia Commons:
+        <a href="https://commons.wikimedia.org/wiki/File:Manhattan_skyline_from_Upper_New_York_Bay,_20231001_1041_0889.jpg" rel="noopener">New York City</a> by Jakub Hałun, <a href="https://creativecommons.org/licenses/by/4.0" rel="noopener">CC BY 4.0</a> ·
+        <a href="https://commons.wikimedia.org/wiki/File:Chicago_skyline_from_16th_Street_bridge.jpg" rel="noopener">Chicago</a> by John Picken, <a href="https://creativecommons.org/licenses/by/2.0" rel="noopener">CC BY 2.0</a> ·
+        <a href="https://commons.wikimedia.org/wiki/File:Nashville_skyline_2009.jpg" rel="noopener">Nashville</a> by Kaldari, public domain ·
+        <a href="assets/cities/CREDITS.md">Photo credits</a></p>
+    </div>
   </footer>
 </body>
 </html>
