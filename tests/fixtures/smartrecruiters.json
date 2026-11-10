@@ -1,0 +1,23 @@
+{
+  "source": "bosch",
+  "employer": "Bosch Group",
+  "ats": "smartrecruiters",
+  "config": {"name": "bosch", "employer": "Bosch Group", "ats": "smartrecruiters", "token": "BoschGroup", "search": "analyst"},
+  "fetched_at": "2026-11-10T11:17:00Z",
+  "search": "analyst",
+  "pages": [
+    {
+      "offset": 0, "limit": 100, "totalFound": 3,
+      "content": [
+        {"id": "744000160978230", "name": "Accounts Receivable Manager", "uuid": "443445a2", "refNumber": "REF300642J", "company": {"identifier": "BoschGroup", "name": "Bosch Group"}, "releasedDate": "2026-11-10T22:17:54.649Z", "location": {"city": "Lincolnshire", "region": "IL", "country": "us", "remote": false, "fullLocation": "Lincolnshire, IL, United States"}, "department": {}, "function": {"id": "accounting_auditing", "label": "Accounting/Auditing"}, "ref": "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000160978230"},
+        {"id": "744000160943939", "name": "Supply Chain Analyst", "releasedDate": "2026-11-01T08:00:00.000Z", "location": {"city": "Stuttgart", "country": "de"}, "department": {"id": "1", "label": "Logistics"}, "ref": "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000160943939"}
+      ]
+    },
+    {
+      "offset": 100, "limit": 100, "totalFound": 3,
+      "content": [
+        {"id": "744000160900000", "name": "Business Analyst", "releasedDate": "bad-date", "location": {}, "ref": "x"}
+      ]
+    }
+  ]
+}

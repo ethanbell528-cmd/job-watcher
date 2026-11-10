@@ -1,0 +1,26 @@
+{
+  "source": "huron",
+  "employer": "Huron Consulting Group",
+  "ats": "workday",
+  "config": {"name": "huron", "employer": "Huron Consulting Group", "ats": "workday", "tenant": "huron", "host": "huron.wd1.myworkdayjobs.com", "site": "huroncareers", "search": ""},
+  "fetched_at": "2026-11-10T11:17:00Z",
+  "search": "",
+  "pages": [
+    {
+      "total": 3,
+      "userAuthenticated": false,
+      "facets": [],
+      "jobPostings": [
+        {"title": "Technical Architect, Microsoft D365 F&SCM - Canada", "externalPath": "/job/Toronto---55-University-Ave/Technical-Architect--Microsoft-D365-F-SCM---Canada_JR-0015442", "locationsText": "2 Locations", "postedOn": "Posted 30+ Days Ago", "remoteType": "Remote", "bulletFields": ["JR-0015442"]},
+        {"title": "  Healthcare   Consultant ", "externalPath": "/job/Chicago-IL/Healthcare-Consultant_JR-0015001-1", "locationsText": "Chicago, IL", "postedOn": "Posted Today", "bulletFields": ["JR-0015001"]}
+      ]
+    },
+    {
+      "total": 0,
+      "jobPostings": [
+        {"title": "Healthcare Consultant", "externalPath": "/job/Chicago-IL/Healthcare-Consultant_JR-0015001-1", "locationsText": "Chicago, IL", "postedOn": "Posted Today", "bulletFields": ["JR-0015001"]},
+        {"title": "Financial Analyst", "externalPath": "/job/Remote/Financial-Analyst", "locationsText": "Remote", "postedOn": "Posted Yesterday", "bulletFields": []}
+      ]
+    }
+  ]
+}

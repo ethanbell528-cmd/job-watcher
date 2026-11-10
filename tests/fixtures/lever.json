@@ -1,0 +1,14 @@
+{
+  "source": "spotify",
+  "employer": "Spotify",
+  "ats": "lever",
+  "config": {"name": "spotify", "employer": "Spotify", "ats": "lever", "token": "spotify", "search": ""},
+  "fetched_at": "2026-11-10T11:17:00Z",
+  "search": "",
+  "pages": [
+    [
+      {"id": "2a55d6c9-c564-443a-be3e-a3851db5a93b", "text": "Account Executive - Commercial, Spotify Technology", "categories": {"commitment": "Permanent", "department": "Operations and Business Support", "location": "New York, NY", "team": "Platform", "allLocations": ["New York, NY"]}, "createdAt": 1792767640768, "country": "US", "workplaceType": "hybrid", "hostedUrl": "https://jobs.lever.co/spotify/2a55d6c9-c564-443a-be3e-a3851db5a93b", "applyUrl": "https://jobs.lever.co/spotify/2a55d6c9-c564-443a-be3e-a3851db5a93b/apply"},
+      {"id": "b1", "text": "Data Analyst", "categories": {"location": "Stockholm", "team": "Insights", "allLocations": ["London", "Stockholm", " London "]}, "hostedUrl": "https://jobs.lever.co/spotify/b1"}
+    ]
+  ]
+}

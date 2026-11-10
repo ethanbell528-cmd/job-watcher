@@ -1,0 +1,25 @@
+{
+  "source": "airbnb",
+  "employer": "Airbnb",
+  "ats": "greenhouse",
+  "config": {"name": "airbnb", "employer": "Airbnb", "ats": "greenhouse", "token": "airbnb", "search": ""},
+  "fetched_at": "2026-11-10T11:17:00Z",
+  "search": "",
+  "pages": [
+    {
+      "jobs": [
+        {"absolute_url": "https://careers.airbnb.com/positions/8365363?gh_jid=8365363", "internal_job_id": 3614972, "location": {"name": "Barcelona, Spain"}, "id": 8365363, "updated_at": "2026-11-10T14:06:27-05:00", "requisition_id": "ONE", "title": "Account Executive (Hotels)", "company_name": "Airbnb", "first_published": "2026-11-09T22:49:33-05:00", "language": "en"},
+        {"absolute_url": "https://careers.airbnb.com/positions/7000001?gh_jid=7000001", "internal_job_id": 3000001, "location": {"name": "Remote, USA"}, "id": 7000001, "updated_at": "2026-10-01T10:00:00-04:00", "title": "Senior Strategy Analyst", "company_name": "Airbnb", "language": "en"}
+      ],
+      "meta": {"total": 2}
+    },
+    {
+      "departments": [
+        {"id": 1, "name": "1. Technical", "parent_id": null, "child_ids": [57796], "jobs": []},
+        {"id": 57796, "name": "Sales", "parent_id": 1, "child_ids": [], "jobs": [{"id": 8365363, "title": "Account Executive (Hotels)"}]},
+        {"id": 57800, "name": "Finance", "parent_id": null, "child_ids": [], "jobs": [{"id": 7000001, "title": "Senior Strategy Analyst"}]},
+        {"id": 57801, "name": "Strategy", "parent_id": null, "child_ids": [], "jobs": [{"id": 7000001, "title": "Senior Strategy Analyst"}]}
+      ]
+    }
+  ]
+}

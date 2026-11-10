@@ -1,0 +1,17 @@
+{
+  "source": "ramp",
+  "employer": "Ramp",
+  "ats": "ashby",
+  "config": {"name": "ramp", "employer": "Ramp", "ats": "ashby", "token": "ramp", "search": ""},
+  "fetched_at": "2026-11-10T11:17:00Z",
+  "search": "",
+  "pages": [
+    {
+      "apiVersion": "1",
+      "jobs": [
+        {"id": "34413f8d-26bf-4bbc-8ade-eb309a0e2245", "title": " Security Engineer, Cloud", "department": "Engineering", "team": "Backend", "employmentType": "FullTime", "location": "New York, NY (HQ)", "secondaryLocations": [{"location": "Remote (Canada)", "address": {"postalAddress": {"addressCountry": "Canada"}}}, {"location": "Miami,  FL"}, {"location": "New York, NY (HQ)"}], "publishedAt": "2026-04-07T17:12:35.753+00:00", "isListed": true, "jobUrl": "https://jobs.ashbyhq.com/ramp/34413f8d-26bf-4bbc-8ade-eb309a0e2245", "applyUrl": "https://jobs.ashbyhq.com/ramp/34413f8d-26bf-4bbc-8ade-eb309a0e2245/application", "descriptionPlain": "About Ramp"},
+        {"id": "a2", "title": "FP&A Analyst", "department": null, "team": "Finance", "location": "Remote", "publishedAt": null, "jobUrl": "https://jobs.ashbyhq.com/ramp/a2"}
+      ]
+    }
+  ]
+}
