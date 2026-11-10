@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Browse · Job Watcher</title>
+  <meta name="description" content="Browse, filter and shortlist open postings.">
+  <meta name="theme-color" content="#0f2a5c" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/core.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/browse.js" defer></script>
+</head>
+<body class="page-browse">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./" aria-label="Job Watcher home">
+        <img src="assets/icons/icon-192.png" alt="" width="32" height="32">
+        <span>Job<b>Watcher</b></span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="./">Today</a>
+        <a href="browse.html" aria-current="page">Browse</a>
+        <a href="market.html">Market</a>
+      </nav>
+    </div>
+  </header>
+  <div id="banner" class="banner" role="status" hidden></div>
+
+  <main id="main">
+    <section class="hero hero-compact">
+      <div class="wrap">
+        <p class="eyebrow">Open postings as of <span id="as-of">the last run</span></p>
+        <h1>Browse openings</h1>
+        <p class="hero-sub">Filter by employer, city and how long a posting has been up. Star the ones worth a closer look - your shortlist stays in this browser.</p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <form class="filters card" id="filters" role="search" aria-label="Filter postings" onsubmit="return false">
+        <div class="filters-row">
+          <div id="scope-host"></div>
+          <button type="button" class="chip-toggle chip-cities" id="cities-chip" aria-pressed="false">
+            <span class="pin" aria-hidden="true"></span>My cities <span class="chip-sub">NYC · Nashville · Chicago</span>
+          </button>
+          <button type="button" class="chip-toggle chip-star" id="shortlist-chip" aria-pressed="false">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3.2l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17.2l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>
+            Shortlist only <span class="seg-count" id="shortlist-count">0</span>
+          </button>
+        </div>
+        <div class="filters-grid">
+          <div class="field field-search">
+            <label for="q">Search titles</label>
+            <input type="search" id="q" placeholder="e.g. strategy, financial analyst" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="employer">Employer</label>
+            <select id="employer"><option value="">All employers</option></select>
+          </div>
+          <div class="field">
+            <label for="location">Location</label>
+            <select id="location"><option value="">All locations</option></select>
+          </div>
+          <div class="field">
+            <label for="age">Days open</label>
+            <select id="age">
+              <option value="">Any</option>
+              <option value="le:0">New today (0 days)</option>
+              <option value="le:3">3 days or less</option>
+              <option value="le:7">7 days or less</option>
+              <option value="le:30">30 days or less</option>
+              <option value="gt:7">More than 7 days</option>
+              <option value="gt:30">More than 30 days</option>
+              <option value="firstrun">Open since watching began (N+)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="sort">Sort by first seen</label>
+            <select id="sort">
+              <option value="desc">Newest first</option>
+              <option value="asc">Oldest first</option>
+            </select>
+          </div>
+        </div>
+        <p class="filters-note">Days open = last run date minus first-seen date. Postings already open when watching began show "N+" because their start date is unknown; the "or less" filters leave them out.</p>
+      </form>
+
+      <div class="results-head">
+        <p id="result-count" class="result-count" role="status" aria-live="polite">Loading…</p>
+        <button type="button" class="btn btn-ghost" id="reset">Clear filters</button>
+      </div>
+      <ul class="postings" id="list"></ul>
+      <nav class="pager" id="pager" aria-label="Pages"></nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Data: <a href="data/history.csv">history.csv</a> · <a href="data/status.json">status.json</a> · All numbers computed in your browser. Dates are UTC.</div>
+  </footer>
+</body>
+</html>
