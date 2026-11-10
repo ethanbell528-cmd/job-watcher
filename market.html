@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Market · Job Watcher</title>
+  <meta name="description" content="A report on the job-posting history the watcher has built, computed in the browser.">
+  <meta name="theme-color" content="#0f2a5c" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/core.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/charts.js" defer></script>
+  <script src="assets/js/market.js" defer></script>
+</head>
+<body class="page-market">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./" aria-label="Job Watcher home">
+        <img src="assets/icons/icon-192.png" alt="" width="32" height="32">
+        <span>Job<b>Watcher</b></span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="./">Today</a>
+        <a href="browse.html">Browse</a>
+        <a href="market.html" aria-current="page">Market</a>
+      </nav>
+    </div>
+  </header>
+  <div id="banner" class="banner" role="status" hidden></div>
+
+  <main id="main">
+    <section class="hero hero-compact">
+      <div class="wrap">
+        <p class="eyebrow">Market report · <span id="as-of">as of the last run</span></p>
+        <h1>What the history says</h1>
+        <p class="hero-sub" id="market-intro">Every number below is computed in your browser from <a href="data/history.csv">history.csv</a>, so the report grows with the history. Postings marked first-run were already open when the watcher started on their source, so their start date is unknown; the definitions leave them out where noted.</p>
+        <ol class="toc" aria-label="Sections">
+          <li><a href="#m1">New per day</a></li>
+          <li><a href="#m2">Removed per day</a></li>
+          <li><a href="#m3">Open by employer</a></li>
+          <li><a href="#m4">Days open</a></li>
+          <li><a href="#m5">Removed within 7 days</a></li>
+          <li><a href="#m6">Top locations</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="wrap market">
+      <section class="panel report" id="m1" aria-labelledby="m1-h">
+        <p class="section-num">1 · New postings per day</p>
+        <h2 id="m1-h">Loading…</h2>
+        <p class="lede" id="m1-p"></p>
+        <div class="chart-host" id="m1-c"></div>
+        <div id="m1-t"></div>
+      </section>
+
+      <section class="panel report" id="m2" aria-labelledby="m2-h">
+        <p class="section-num">2 · Removed postings per day</p>
+        <h2 id="m2-h">Loading…</h2>
+        <p class="lede" id="m2-p"></p>
+        <div class="chart-host" id="m2-c"></div>
+        <div id="m2-t"></div>
+      </section>
+
+      <section class="panel report" id="m3" aria-labelledby="m3-h">
+        <p class="section-num">3 · Open postings per employer</p>
+        <h2 id="m3-h">Loading…</h2>
+        <p class="lede" id="m3-p"></p>
+        <div class="chart-host" id="m3-c"></div>
+        <div id="m3-t"></div>
+      </section>
+
+      <section class="panel report" id="m4" aria-labelledby="m4-h">
+        <p class="section-num">4 · Days open</p>
+        <h2 id="m4-h">Loading…</h2>
+        <p class="lede" id="m4-p"></p>
+        <div class="chart-host" id="m4-c"></div>
+        <div id="m4-t"></div>
+      </section>
+
+      <section class="panel report" id="m5" aria-labelledby="m5-h">
+        <p class="section-num">5 · Share removed within seven days</p>
+        <h2 id="m5-h">Loading…</h2>
+        <p class="lede" id="m5-p"></p>
+        <div class="chart-host" id="m5-c"></div>
+        <div id="m5-t"></div>
+      </section>
+
+      <section class="panel report" id="m6" aria-labelledby="m6-h">
+        <p class="section-num">6 · Top locations among open postings</p>
+        <h2 id="m6-h">Loading…</h2>
+        <p class="lede" id="m6-p"></p>
+        <div class="chart-host" id="m6-c"></div>
+        <div id="m6-t"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Data: <a href="data/history.csv">history.csv</a> · <a href="data/status.json">status.json</a> · All numbers computed in your browser. Dates are UTC.</div>
+  </footer>
+</body>
+</html>
