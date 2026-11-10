@@ -1,0 +1,234 @@
+[
+  {
+    "name": "huron",
+    "employer": "Huron Consulting Group",
+    "ats": "workday",
+    "tenant": "huron",
+    "host": "huron.wd1.myworkdayjobs.com",
+    "site": "huroncareers",
+    "search": ""
+  },
+  {
+    "name": "northern_trust",
+    "employer": "Northern Trust",
+    "ats": "workday",
+    "tenant": "ntrs",
+    "host": "ntrs.wd1.myworkdayjobs.com",
+    "site": "northerntrust",
+    "search": ""
+  },
+  {
+    "name": "cme_group",
+    "employer": "CME Group",
+    "ats": "workday",
+    "tenant": "cmegroup",
+    "host": "cmegroup.wd1.myworkdayjobs.com",
+    "site": "cme_careers",
+    "search": ""
+  },
+  {
+    "name": "morningstar",
+    "employer": "Morningstar",
+    "ats": "workday",
+    "tenant": "morningstar",
+    "host": "morningstar.wd5.myworkdayjobs.com",
+    "site": "Morningstar",
+    "search": ""
+  },
+  {
+    "name": "alliancebernstein",
+    "employer": "AllianceBernstein",
+    "ats": "workday",
+    "tenant": "abglobal",
+    "host": "abglobal.wd1.myworkdayjobs.com",
+    "site": "alliancebernsteincareers",
+    "search": ""
+  },
+  {
+    "name": "nissan",
+    "employer": "Nissan Americas",
+    "ats": "workday",
+    "tenant": "alliance",
+    "host": "alliance.wd3.myworkdayjobs.com",
+    "site": "nissanjobs",
+    "search": ""
+  },
+  {
+    "name": "bridgestone",
+    "employer": "Bridgestone Americas",
+    "ats": "workday",
+    "tenant": "bridgestone",
+    "host": "bridgestone.wd5.myworkdayjobs.com",
+    "site": "External",
+    "search": "analyst"
+  },
+  {
+    "name": "guidehouse",
+    "employer": "Guidehouse",
+    "ats": "workday",
+    "tenant": "guidehouse",
+    "host": "guidehouse.wd1.myworkdayjobs.com",
+    "site": "External",
+    "search": ""
+  },
+  {
+    "name": "fti_consulting",
+    "employer": "FTI Consulting",
+    "ats": "workday",
+    "tenant": "fticonsulting",
+    "host": "fticonsulting.wd108.myworkdayjobs.com",
+    "site": "FTIConsultingCareers",
+    "search": ""
+  },
+  {
+    "name": "protiviti",
+    "employer": "Protiviti",
+    "ats": "workday",
+    "tenant": "roberthalf",
+    "host": "roberthalf.wd1.myworkdayjobs.com",
+    "site": "ProtivitiNA",
+    "search": ""
+  },
+  {
+    "name": "pwc",
+    "employer": "PwC",
+    "ats": "workday",
+    "tenant": "pwc",
+    "host": "pwc.wd3.myworkdayjobs.com",
+    "site": "Global_Experienced_Careers",
+    "search": ""
+  },
+  {
+    "name": "rsm",
+    "employer": "RSM US",
+    "ats": "workday",
+    "tenant": "rsm",
+    "host": "rsm.wd1.myworkdayjobs.com",
+    "site": "RSMCareers",
+    "search": ""
+  },
+  {
+    "name": "crowe",
+    "employer": "Crowe",
+    "ats": "workday",
+    "tenant": "crowe",
+    "host": "crowe.wd12.myworkdayjobs.com",
+    "site": "External_Careers",
+    "search": ""
+  },
+  {
+    "name": "baker_tilly",
+    "employer": "Baker Tilly",
+    "ats": "workday",
+    "tenant": "bakertilly",
+    "host": "bakertilly.wd5.myworkdayjobs.com",
+    "site": "BTCareers",
+    "search": ""
+  },
+  {
+    "name": "ankura",
+    "employer": "Ankura Consulting Group",
+    "ats": "workday",
+    "tenant": "ankura",
+    "host": "ankura.wd5.myworkdayjobs.com",
+    "site": "Ankura",
+    "search": ""
+  },
+  {
+    "name": "gartner",
+    "employer": "Gartner",
+    "ats": "workday",
+    "tenant": "gartner",
+    "host": "gartner.wd5.myworkdayjobs.com",
+    "site": "EXT",
+    "search": ""
+  },
+  {
+    "name": "mastercard",
+    "employer": "Mastercard",
+    "ats": "workday",
+    "tenant": "mastercard",
+    "host": "mastercard.wd1.myworkdayjobs.com",
+    "site": "CorporateCareers",
+    "search": ""
+  },
+  {
+    "name": "capital_one",
+    "employer": "Capital One",
+    "ats": "workday",
+    "tenant": "capitalone",
+    "host": "capitalone.wd12.myworkdayjobs.com",
+    "site": "Capital_One",
+    "search": ""
+  },
+  {
+    "name": "capco",
+    "employer": "Capco",
+    "ats": "greenhouse",
+    "token": "capco",
+    "search": ""
+  },
+  {
+    "name": "charles_river_associates",
+    "employer": "Charles River Associates",
+    "ats": "greenhouse",
+    "token": "charlesriverassociates",
+    "search": ""
+  },
+  {
+    "name": "spaulding_ridge",
+    "employer": "Spaulding Ridge",
+    "ats": "greenhouse",
+    "token": "spauldingridge",
+    "search": ""
+  },
+  {
+    "name": "aprio",
+    "employer": "Aprio",
+    "ats": "lever",
+    "token": "Aprio",
+    "search": ""
+  },
+  {
+    "name": "kobie",
+    "employer": "Kobie Marketing",
+    "ats": "lever",
+    "token": "kobie",
+    "search": ""
+  },
+  {
+    "name": "palantir",
+    "employer": "Palantir Technologies",
+    "ats": "lever",
+    "token": "palantir",
+    "search": ""
+  },
+  {
+    "name": "ramp",
+    "employer": "Ramp",
+    "ats": "ashby",
+    "token": "ramp",
+    "search": ""
+  },
+  {
+    "name": "dlc",
+    "employer": "DLC (Accounting & Finance Consulting)",
+    "ats": "ashby",
+    "token": "dlc-inc",
+    "search": ""
+  },
+  {
+    "name": "nielseniq",
+    "employer": "NielsenIQ",
+    "ats": "smartrecruiters",
+    "token": "NielsenIQ",
+    "search": ""
+  },
+  {
+    "name": "servicenow",
+    "employer": "ServiceNow",
+    "ats": "smartrecruiters",
+    "token": "ServiceNow",
+    "search": ""
+  }
+]
