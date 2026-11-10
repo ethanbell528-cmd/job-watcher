@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Today · Job Watcher</title>
+  <meta name="description" content="Daily watch of consulting and corporate analyst openings, with New York City, Nashville and Chicago flagged.">
+  <meta name="theme-color" content="#0f2a5c" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/core.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/today.js" defer></script>
+</head>
+<body class="page-today">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./" aria-label="Job Watcher home">
+        <img src="assets/icons/icon-192.png" alt="" width="32" height="32">
+        <span>Job<b>Watcher</b></span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="./" aria-current="page">Today</a>
+        <a href="browse.html">Browse</a>
+        <a href="market.html">Market</a>
+      </nav>
+    </div>
+  </header>
+  <div id="banner" class="banner" role="status" hidden></div>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Consulting &amp; corporate analyst roles · NYC · Nashville · Chicago</p>
+        <h1>Today's watch</h1>
+        <p class="hero-run">Last run <time id="run-time" class="run-time">loading…</time> <span id="run-ago" class="run-ago"></span></p>
+        <p id="run-local" class="hero-sub"></p>
+        <div class="stats" aria-label="Counts from the latest run">
+          <div class="stat"><span class="stat-label">Days with a successful run</span><span class="stat-value" id="s-days">–</span><span class="stat-note" id="s-days-note"></span></div>
+          <div class="stat"><span class="stat-label">Open postings</span><span class="stat-value" id="s-open">–</span><span class="stat-note" id="s-open-note"></span></div>
+          <div class="stat stat-new"><span class="stat-label">New today</span><span class="stat-value" id="s-new">–</span><span class="stat-note" id="s-new-note"></span></div>
+          <div class="stat stat-removed"><span class="stat-label">Removed today</span><span class="stat-value" id="s-removed">–</span><span class="stat-note" id="s-removed-note"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <section class="panel" aria-labelledby="new-h">
+        <div class="panel-head">
+          <div>
+            <h2 id="new-h">New in the latest run</h2>
+            <p class="panel-sub" id="new-sub">Postings first seen on the last run date (postings already open when watching began are left out).</p>
+          </div>
+          <div class="panel-tools" id="new-tools"></div>
+        </div>
+        <ul class="postings" id="new-list" aria-live="polite"><li class="empty">Loading…</li></ul>
+      </section>
+
+      <section class="panel" aria-labelledby="removed-h">
+        <div class="panel-head">
+          <div>
+            <h2 id="removed-h">Removed in the latest run</h2>
+            <p class="panel-sub" id="removed-sub">Postings whose source no longer listed them on the last run date.</p>
+          </div>
+          <div class="panel-tools" id="removed-tools"></div>
+        </div>
+        <ul class="postings" id="removed-list" aria-live="polite"><li class="empty">Loading…</li></ul>
+      </section>
+
+      <section class="panel" aria-labelledby="src-h">
+        <div class="panel-head">
+          <div>
+            <h2 id="src-h">Source status</h2>
+            <p class="panel-sub" id="src-sub">Every job board the watcher called on the latest run.</p>
+          </div>
+        </div>
+        <ul class="sources" id="sources"><li class="empty">Loading…</li></ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Data: <a href="data/history.csv">history.csv</a> · <a href="data/status.json">status.json</a> · All numbers computed in your browser. Dates are UTC.</div>
+  </footer>
+</body>
+</html>
