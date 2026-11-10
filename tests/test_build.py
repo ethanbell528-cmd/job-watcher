@@ -147,7 +147,7 @@ def test_in_role_uses_title_rule(tmp_path):
 
 def test_csv_sorted_columns_and_values(tmp_path):
     put(tmp_path, "2026-11-01", "zeta", [("2", "Analyst"), ("10", "Engineer")])
-    put(tmp_path, "2026-11-01", "alpha", [("b", "Consultant, \"Strategy\"")])
+    put(tmp_path, "2026-11-01", "alpha", [("b", "Tax Consultant, \"Strategy\"")])
     put(tmp_path, "2026-11-02", "zeta", [("2", "Analyst")])
     build(tmp_path)
     text = (tmp_path / "history.csv").read_bytes().decode("utf-8")
@@ -159,7 +159,7 @@ def test_csv_sorted_columns_and_values(tmp_path):
     a = rows[0]
     assert a == {
         "posting_id": "alpha:b", "source": "alpha", "source_id": "b", "employer": "Acme",
-        "title": 'Consultant, "Strategy"', "location": "NYC", "department": "Finance",
+        "title": 'Tax Consultant, "Strategy"', "location": "NYC", "department": "Finance",
         "posted_date": "2026-01-01", "url": "https://jobs.ashbyhq.com/alpha/b", "in_role": "true",
         "first_run": "true", "first_seen": "2026-11-01", "last_seen": "2026-11-01", "status": "open",
         "removed_date": "",

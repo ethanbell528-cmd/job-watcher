@@ -3,8 +3,9 @@
 [![Tests](https://github.com/ethanbell528-cmd/job-watcher/actions/workflows/tests.yml/badge.svg)](https://github.com/ethanbell528-cmd/job-watcher/actions/workflows/tests.yml)
 [![Daily run](https://github.com/ethanbell528-cmd/job-watcher/actions/workflows/daily.yml/badge.svg)](https://github.com/ethanbell528-cmd/job-watcher/actions/workflows/daily.yml)
 
-A tool that watches the job market for **consulting jobs and corporate analyst roles**, with a focus on
-**New York City, Nashville and Chicago**. Once a day GitHub Actions pulls every open position from 28
+A tool that watches the job market for **accounting and finance roles** (accounting and finance
+consulting, and the jobs open to an accounting and finance undergraduate with a master's in finance),
+with a focus on **New York City, Nashville and Chicago**. Once a day GitHub Actions pulls every open position from 28
 employers, compares it with the day before, records what is new and what is gone, opens a GitHub Issue
 with the changes, and publishes the result to a website.
 
@@ -12,12 +13,23 @@ Live site: https://ethanbell528-cmd.github.io/job-watcher/
 
 ## Title rule
 
-A posting is in my role when its title, ignoring case, contains the whole word "consult",
-"consultant(s)", "consulting" or "consultancy", or the whole word "analyst(s)". Consulting titles used
-for retail, sales or personal-service jobs do not count: "lactation consultant", "beauty consultant",
-"skincare consultant", "leasing consultant", "sales consultant", "retail consultant", "travel
-consultant", "fitness consultant", "wedding consultant", "fashion consultant", "style consultant" and
-"wardrobe consultant". Only the job title is used, nothing else about the posting.
+My role is accounting and finance: accounting and finance consulting, and the jobs open to someone with
+an accounting and finance undergraduate degree and a master's in finance.
+
+A posting is in my role when its title, ignoring case, passes all three checks:
+
+1. It contains an accounting or finance word: accounting, accountant, accounts payable/receivable,
+   audit, auditor, assurance, tax, CPA, SOX, internal controls, bookkeeper, finance, financial, FP&A,
+   treasury, budget, valuation, credit, lending, loan, underwriting, investment, banking, banker,
+   capital markets, private equity, equity research, portfolio, wealth, asset management, fund, M&A,
+   mergers, transaction, deal, due diligence, restructuring, forensic, CFO, economic consulting, or risk.
+2. It is not a manager-level or higher job: no manager, director, vice president / VP, principal,
+   partner, head, chief, president, controller or "managing" in the title.
+3. It is not a technology job: no engineer, developer, architect, software, programmer, cyber, DevOps
+   or "data scientist" in the title.
+
+Only the job title is used, nothing else about the posting. Each word is matched as a whole word, so
+"Taxonomy Specialist" is not a tax job.
 
 The rule lives in `watcher/role.py`. The three target cities are not part of the rule: the site flags
 and filters New York City, Nashville and Chicago postings from the `location` column.

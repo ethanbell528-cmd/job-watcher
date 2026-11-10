@@ -16,8 +16,8 @@ RESULTS = [
 
 
 def make_history(tmp_path):
-    put(tmp_path, "2026-11-01", "a", [("1", "Financial Analyst"), ("2", "Engineer"), ("3", "Consultant")])
-    put(tmp_path, "2026-11-02", "a", [("1", "Financial Analyst"), ("4", "Data Analyst"), ("5", "Designer")])
+    put(tmp_path, "2026-11-01", "a", [("1", "Financial Analyst"), ("2", "Engineer"), ("3", "Tax Consultant")])
+    put(tmp_path, "2026-11-02", "a", [("1", "Financial Analyst"), ("4", "Credit Analyst"), ("5", "Designer")])
     return build_history(tmp_path / "raw")
 
 
@@ -48,9 +48,9 @@ def test_issue_body_lists_new_and_removed_with_links(tmp_path):
     res = make_history(tmp_path)
     body = build_issue_body("2026-11-02", res.rows, RESULTS)
     assert issue_title("2026-11-02") == "Job watcher 2026-11-02"
-    assert "[Data Analyst](https://jobs.ashbyhq.com/a/4)" in body
+    assert "[Credit Analyst](https://jobs.ashbyhq.com/a/4)" in body
     assert "[Designer](https://jobs.ashbyhq.com/a/5)" in body
-    assert "[Consultant](https://jobs.ashbyhq.com/a/3)" in body
+    assert "[Tax Consultant](https://jobs.ashbyhq.com/a/3)" in body
     assert "[Engineer](https://jobs.ashbyhq.com/a/2)" in body
     assert "Financial Analyst" not in body  # unchanged posting
     # in-role sections come before the others
@@ -69,12 +69,12 @@ def test_issue_body_with_no_changes(tmp_path):
 
 def test_issue_body_truncates_but_keeps_in_role(tmp_path):
     put(tmp_path, "2026-11-01", "a", [("0", "Seed")])
-    jobs = [(f"r{i}", f"Analyst {i}") for i in range(50)] + [(f"o{i}", f"Engineer {'x' * 80} {i}") for i in range(3000)]
+    jobs = [(f"r{i}", f"Tax Analyst {i}") for i in range(50)] + [(f"o{i}", f"Engineer {'x' * 80} {i}") for i in range(3000)]
     put(tmp_path, "2026-11-02", "a", jobs)
     res = build_history(tmp_path / "raw")
     body = build_issue_body("2026-11-02", res.rows, RESULTS)
     assert len(body) <= BODY_BUDGET <= issue.MAX_BODY
-    assert all(f"[Analyst {i}]" in body for i in range(50))
+    assert all(f"[Tax Analyst {i}]" in body for i in range(50))
     assert "Other new postings (3000)" in body
     assert "more" in body.split("Other new postings (3000)")[1]
 
