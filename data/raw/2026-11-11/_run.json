@@ -1,0 +1,229 @@
+{
+  "run_time": "2026-11-11T18:41:52Z",
+  "sources": [
+    {
+      "name": "huron",
+      "employer": "Huron Consulting Group",
+      "ats": "workday",
+      "ok": true,
+      "count": 280,
+      "error": null
+    },
+    {
+      "name": "northern_trust",
+      "employer": "Northern Trust",
+      "ats": "workday",
+      "ok": true,
+      "count": 660,
+      "error": null
+    },
+    {
+      "name": "cme_group",
+      "employer": "CME Group",
+      "ats": "workday",
+      "ok": true,
+      "count": 71,
+      "error": null
+    },
+    {
+      "name": "morningstar",
+      "employer": "Morningstar",
+      "ats": "workday",
+      "ok": true,
+      "count": 192,
+      "error": null
+    },
+    {
+      "name": "alliancebernstein",
+      "employer": "AllianceBernstein",
+      "ats": "workday",
+      "ok": true,
+      "count": 87,
+      "error": null
+    },
+    {
+      "name": "nissan",
+      "employer": "Nissan Americas",
+      "ats": "workday",
+      "ok": true,
+      "count": 336,
+      "error": null
+    },
+    {
+      "name": "bridgestone",
+      "employer": "Bridgestone Americas",
+      "ats": "workday",
+      "ok": true,
+      "count": 26,
+      "error": null
+    },
+    {
+      "name": "guidehouse",
+      "employer": "Guidehouse",
+      "ats": "workday",
+      "ok": true,
+      "count": 824,
+      "error": null
+    },
+    {
+      "name": "fti_consulting",
+      "employer": "FTI Consulting",
+      "ats": "workday",
+      "ok": true,
+      "count": 244,
+      "error": null
+    },
+    {
+      "name": "protiviti",
+      "employer": "Protiviti",
+      "ats": "workday",
+      "ok": true,
+      "count": 155,
+      "error": null
+    },
+    {
+      "name": "pwc",
+      "employer": "PwC",
+      "ats": "workday",
+      "ok": true,
+      "count": 3767,
+      "error": null
+    },
+    {
+      "name": "rsm",
+      "employer": "RSM US",
+      "ats": "workday",
+      "ok": true,
+      "count": 646,
+      "error": null
+    },
+    {
+      "name": "crowe",
+      "employer": "Crowe",
+      "ats": "workday",
+      "ok": true,
+      "count": 170,
+      "error": null
+    },
+    {
+      "name": "baker_tilly",
+      "employer": "Baker Tilly",
+      "ats": "workday",
+      "ok": true,
+      "count": 548,
+      "error": null
+    },
+    {
+      "name": "ankura",
+      "employer": "Ankura Consulting Group",
+      "ats": "workday",
+      "ok": true,
+      "count": 84,
+      "error": null
+    },
+    {
+      "name": "gartner",
+      "employer": "Gartner",
+      "ats": "workday",
+      "ok": true,
+      "count": 803,
+      "error": null
+    },
+    {
+      "name": "mastercard",
+      "employer": "Mastercard",
+      "ats": "workday",
+      "ok": true,
+      "count": 898,
+      "error": null
+    },
+    {
+      "name": "capital_one",
+      "employer": "Capital One",
+      "ats": "workday",
+      "ok": true,
+      "count": 2066,
+      "error": null
+    },
+    {
+      "name": "capco",
+      "employer": "Capco",
+      "ats": "greenhouse",
+      "ok": true,
+      "count": 714,
+      "error": null
+    },
+    {
+      "name": "charles_river_associates",
+      "employer": "Charles River Associates",
+      "ats": "greenhouse",
+      "ok": true,
+      "count": 92,
+      "error": null
+    },
+    {
+      "name": "spaulding_ridge",
+      "employer": "Spaulding Ridge",
+      "ats": "greenhouse",
+      "ok": true,
+      "count": 37,
+      "error": null
+    },
+    {
+      "name": "aprio",
+      "employer": "Aprio",
+      "ats": "lever",
+      "ok": true,
+      "count": 205,
+      "error": null
+    },
+    {
+      "name": "kobie",
+      "employer": "Kobie Marketing",
+      "ats": "lever",
+      "ok": true,
+      "count": 32,
+      "error": null
+    },
+    {
+      "name": "palantir",
+      "employer": "Palantir Technologies",
+      "ats": "lever",
+      "ok": true,
+      "count": 303,
+      "error": null
+    },
+    {
+      "name": "ramp",
+      "employer": "Ramp",
+      "ats": "ashby",
+      "ok": true,
+      "count": 176,
+      "error": null
+    },
+    {
+      "name": "dlc",
+      "employer": "DLC (Accounting & Finance Consulting)",
+      "ats": "ashby",
+      "ok": true,
+      "count": 35,
+      "error": null
+    },
+    {
+      "name": "nielseniq",
+      "employer": "NielsenIQ",
+      "ats": "smartrecruiters",
+      "ok": true,
+      "count": 410,
+      "error": null
+    },
+    {
+      "name": "servicenow",
+      "employer": "ServiceNow",
+      "ats": "smartrecruiters",
+      "ok": true,
+      "count": 788,
+      "error": null
+    }
+  ]
+}
