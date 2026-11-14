@@ -1,10 +1,10 @@
 {
-  "run_time": "2026-11-13T18:31:58Z",
+  "run_time": "2026-11-14T17:07:08Z",
   "first_run_date": "2026-11-10",
-  "days_with_success": 4,
-  "open": 14544,
-  "new_today": 252,
-  "removed_today": 331,
+  "days_with_success": 5,
+  "open": 14578,
+  "new_today": 108,
+  "removed_today": 90,
   "sources": [
     {
       "name": "huron",
@@ -17,7 +17,7 @@
     {
       "name": "northern_trust",
       "ok": true,
-      "count": 645,
+      "count": 651,
       "employer": "Northern Trust",
       "ats": "workday",
       "error": null
@@ -25,7 +25,7 @@
     {
       "name": "cme_group",
       "ok": true,
-      "count": 75,
+      "count": 74,
       "employer": "CME Group",
       "ats": "workday",
       "error": null
@@ -49,7 +49,7 @@
     {
       "name": "nissan",
       "ok": true,
-      "count": 342,
+      "count": 345,
       "employer": "Nissan Americas",
       "ats": "workday",
       "error": null
@@ -57,7 +57,7 @@
     {
       "name": "bridgestone",
       "ok": true,
-      "count": 24,
+      "count": 23,
       "employer": "Bridgestone Americas",
       "ats": "workday",
       "error": null
@@ -65,7 +65,7 @@
     {
       "name": "guidehouse",
       "ok": true,
-      "count": 840,
+      "count": 842,
       "employer": "Guidehouse",
       "ats": "workday",
       "error": null
@@ -73,7 +73,7 @@
     {
       "name": "fti_consulting",
       "ok": true,
-      "count": 243,
+      "count": 238,
       "employer": "FTI Consulting",
       "ats": "workday",
       "error": null
@@ -81,7 +81,7 @@
     {
       "name": "protiviti",
       "ok": true,
-      "count": 148,
+      "count": 145,
       "employer": "Protiviti",
       "ats": "workday",
       "error": null
@@ -89,7 +89,7 @@
     {
       "name": "pwc",
       "ok": true,
-      "count": 3729,
+      "count": 3730,
       "employer": "PwC",
       "ats": "workday",
       "error": null
@@ -97,7 +97,7 @@
     {
       "name": "rsm",
       "ok": true,
-      "count": 661,
+      "count": 663,
       "employer": "RSM US",
       "ats": "workday",
       "error": null
@@ -113,7 +113,7 @@
     {
       "name": "baker_tilly",
       "ok": true,
-      "count": 555,
+      "count": 558,
       "employer": "Baker Tilly",
       "ats": "workday",
       "error": null
@@ -129,7 +129,7 @@
     {
       "name": "gartner",
       "ok": true,
-      "count": 783,
+      "count": 795,
       "employer": "Gartner",
       "ats": "workday",
       "error": null
@@ -137,7 +137,7 @@
     {
       "name": "mastercard",
       "ok": true,
-      "count": 858,
+      "count": 848,
       "employer": "Mastercard",
       "ats": "workday",
       "error": null
@@ -145,7 +145,7 @@
     {
       "name": "capital_one",
       "ok": true,
-      "count": 2046,
+      "count": 2061,
       "employer": "Capital One",
       "ats": "workday",
       "error": null
@@ -153,7 +153,7 @@
     {
       "name": "capco",
       "ok": true,
-      "count": 699,
+      "count": 697,
       "employer": "Capco",
       "ats": "greenhouse",
       "error": null
@@ -177,7 +177,7 @@
     {
       "name": "aprio",
       "ok": true,
-      "count": 198,
+      "count": 199,
       "employer": "Aprio",
       "ats": "lever",
       "error": null
@@ -185,7 +185,7 @@
     {
       "name": "kobie",
       "ok": true,
-      "count": 32,
+      "count": 31,
       "employer": "Kobie Marketing",
       "ats": "lever",
       "error": null
@@ -193,7 +193,7 @@
     {
       "name": "palantir",
       "ok": true,
-      "count": 301,
+      "count": 302,
       "employer": "Palantir Technologies",
       "ats": "lever",
       "error": null
@@ -201,7 +201,7 @@
     {
       "name": "ramp",
       "ok": true,
-      "count": 179,
+      "count": 180,
       "employer": "Ramp",
       "ats": "ashby",
       "error": null
@@ -225,7 +225,7 @@
     {
       "name": "servicenow",
       "ok": true,
-      "count": 808,
+      "count": 818,
       "employer": "ServiceNow",
       "ats": "smartrecruiters",
       "error": null
