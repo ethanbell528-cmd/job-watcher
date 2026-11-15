@@ -1,15 +1,15 @@
 {
-  "run_time": "2026-11-14T17:07:08Z",
+  "run_time": "2026-11-15T17:42:30Z",
   "first_run_date": "2026-11-10",
-  "days_with_success": 5,
-  "open": 14578,
-  "new_today": 108,
-  "removed_today": 90,
+  "days_with_success": 6,
+  "open": 14559,
+  "new_today": 9,
+  "removed_today": 30,
   "sources": [
     {
       "name": "huron",
       "ok": true,
-      "count": 279,
+      "count": 280,
       "employer": "Huron Consulting Group",
       "ats": "workday",
       "error": null
@@ -17,7 +17,7 @@
     {
       "name": "northern_trust",
       "ok": true,
-      "count": 651,
+      "count": 646,
       "employer": "Northern Trust",
       "ats": "workday",
       "error": null
@@ -49,7 +49,7 @@
     {
       "name": "nissan",
       "ok": true,
-      "count": 345,
+      "count": 344,
       "employer": "Nissan Americas",
       "ats": "workday",
       "error": null
@@ -89,7 +89,7 @@
     {
       "name": "pwc",
       "ok": true,
-      "count": 3730,
+      "count": 3727,
       "employer": "PwC",
       "ats": "workday",
       "error": null
@@ -105,7 +105,7 @@
     {
       "name": "crowe",
       "ok": true,
-      "count": 172,
+      "count": 168,
       "employer": "Crowe",
       "ats": "workday",
       "error": null
@@ -129,7 +129,7 @@
     {
       "name": "gartner",
       "ok": true,
-      "count": 795,
+      "count": 791,
       "employer": "Gartner",
       "ats": "workday",
       "error": null
@@ -137,7 +137,7 @@
     {
       "name": "mastercard",
       "ok": true,
-      "count": 848,
+      "count": 844,
       "employer": "Mastercard",
       "ats": "workday",
       "error": null
@@ -153,7 +153,7 @@
     {
       "name": "capco",
       "ok": true,
-      "count": 697,
+      "count": 699,
       "employer": "Capco",
       "ats": "greenhouse",
       "error": null
@@ -161,7 +161,7 @@
     {
       "name": "charles_river_associates",
       "ok": true,
-      "count": 85,
+      "count": 86,
       "employer": "Charles River Associates",
       "ats": "greenhouse",
       "error": null
@@ -225,7 +225,7 @@
     {
       "name": "servicenow",
       "ok": true,
-      "count": 818,
+      "count": 816,
       "employer": "ServiceNow",
       "ats": "smartrecruiters",
       "error": null
