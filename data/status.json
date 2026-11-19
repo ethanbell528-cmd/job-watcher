@@ -1,15 +1,15 @@
 {
-  "run_time": "2026-11-18T19:24:29Z",
+  "run_time": "2026-11-19T19:29:14Z",
   "first_run_date": "2026-11-10",
-  "days_with_success": 9,
-  "open": 14505,
-  "new_today": 340,
-  "removed_today": 415,
+  "days_with_success": 10,
+  "open": 14459,
+  "new_today": 352,
+  "removed_today": 428,
   "sources": [
     {
       "name": "huron",
       "ok": true,
-      "count": 285,
+      "count": 281,
       "employer": "Huron Consulting Group",
       "ats": "workday",
       "error": null
@@ -17,7 +17,7 @@
     {
       "name": "northern_trust",
       "ok": true,
-      "count": 672,
+      "count": 667,
       "employer": "Northern Trust",
       "ats": "workday",
       "error": null
@@ -33,7 +33,7 @@
     {
       "name": "morningstar",
       "ok": true,
-      "count": 189,
+      "count": 190,
       "employer": "Morningstar",
       "ats": "workday",
       "error": null
@@ -41,7 +41,7 @@
     {
       "name": "alliancebernstein",
       "ok": true,
-      "count": 90,
+      "count": 89,
       "employer": "AllianceBernstein",
       "ats": "workday",
       "error": null
@@ -49,7 +49,7 @@
     {
       "name": "nissan",
       "ok": true,
-      "count": 340,
+      "count": 343,
       "employer": "Nissan Americas",
       "ats": "workday",
       "error": null
@@ -73,7 +73,7 @@
     {
       "name": "fti_consulting",
       "ok": true,
-      "count": 245,
+      "count": 249,
       "employer": "FTI Consulting",
       "ats": "workday",
       "error": null
@@ -81,7 +81,7 @@
     {
       "name": "protiviti",
       "ok": true,
-      "count": 144,
+      "count": 154,
       "employer": "Protiviti",
       "ats": "workday",
       "error": null
@@ -89,7 +89,7 @@
     {
       "name": "pwc",
       "ok": true,
-      "count": 3679,
+      "count": 3652,
       "employer": "PwC",
       "ats": "workday",
       "error": null
@@ -97,7 +97,7 @@
     {
       "name": "rsm",
       "ok": true,
-      "count": 660,
+      "count": 667,
       "employer": "RSM US",
       "ats": "workday",
       "error": null
@@ -113,7 +113,7 @@
     {
       "name": "baker_tilly",
       "ok": true,
-      "count": 555,
+      "count": 562,
       "employer": "Baker Tilly",
       "ats": "workday",
       "error": null
@@ -121,7 +121,7 @@
     {
       "name": "ankura",
       "ok": true,
-      "count": 85,
+      "count": 87,
       "employer": "Ankura Consulting Group",
       "ats": "workday",
       "error": null
@@ -129,7 +129,7 @@
     {
       "name": "gartner",
       "ok": true,
-      "count": 802,
+      "count": 787,
       "employer": "Gartner",
       "ats": "workday",
       "error": null
@@ -137,7 +137,7 @@
     {
       "name": "mastercard",
       "ok": true,
-      "count": 767,
+      "count": 731,
       "employer": "Mastercard",
       "ats": "workday",
       "error": null
@@ -145,7 +145,7 @@
     {
       "name": "capital_one",
       "ok": true,
-      "count": 2059,
+      "count": 2058,
       "employer": "Capital One",
       "ats": "workday",
       "error": null
@@ -153,7 +153,7 @@
     {
       "name": "capco",
       "ok": true,
-      "count": 704,
+      "count": 689,
       "employer": "Capco",
       "ats": "greenhouse",
       "error": null
@@ -161,7 +161,7 @@
     {
       "name": "charles_river_associates",
       "ok": true,
-      "count": 90,
+      "count": 92,
       "employer": "Charles River Associates",
       "ats": "greenhouse",
       "error": null
@@ -177,7 +177,7 @@
     {
       "name": "aprio",
       "ok": true,
-      "count": 180,
+      "count": 177,
       "employer": "Aprio",
       "ats": "lever",
       "error": null
@@ -185,7 +185,7 @@
     {
       "name": "kobie",
       "ok": true,
-      "count": 31,
+      "count": 32,
       "employer": "Kobie Marketing",
       "ats": "lever",
       "error": null
@@ -193,7 +193,7 @@
     {
       "name": "palantir",
       "ok": true,
-      "count": 306,
+      "count": 307,
       "employer": "Palantir Technologies",
       "ats": "lever",
       "error": null
@@ -201,7 +201,7 @@
     {
       "name": "ramp",
       "ok": true,
-      "count": 181,
+      "count": 183,
       "employer": "Ramp",
       "ats": "ashby",
       "error": null
@@ -217,7 +217,7 @@
     {
       "name": "nielseniq",
       "ok": true,
-      "count": 400,
+      "count": 420,
       "employer": "NielsenIQ",
       "ats": "smartrecruiters",
       "error": null
@@ -225,7 +225,7 @@
     {
       "name": "servicenow",
       "ok": true,
-      "count": 835,
+      "count": 836,
       "employer": "ServiceNow",
       "ats": "smartrecruiters",
       "error": null
